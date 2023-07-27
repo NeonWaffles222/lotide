@@ -9,7 +9,9 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(str) {
   let results = {};
   for (let letter of str) {
-    if (results[letter]) {
+    if (letter == " ") {
+
+    } else if (results[letter]) {
       results[letter] += 1;
     } else {
       results[letter] = 1;
@@ -18,7 +20,8 @@ const countLetters = function(str) {
   return results;
 };
 
-const letters = countLetters("hello");
+const letters = countLetters("hello ");
+console.log(letters);
 assertEqual(letters['h'], 1);
 assertEqual(letters['e'], 1);
 assertEqual(letters['l'], 2);
